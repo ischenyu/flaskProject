@@ -1,0 +1,283 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+*{
+  box-sizing:border-box;
+}
+body{
+  margin-top:0px;
+  margin-right:0px;
+  margin-bottom:0px;
+  margin-left:0px;
+  font-family:-apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Roboto, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei", "Microsoft Jhenghei", sans-serif;
+}
+.panel{
+  width:90%;
+  max-width:700px;
+  border-top-left-radius:12px;
+  border-top-right-radius:12px;
+  border-bottom-right-radius:12px;
+  border-bottom-left-radius:12px;
+  padding-top:30px;
+  padding-right:50px;
+  padding-bottom:30px;
+  padding-left:50px;
+  margin-top:50px;
+  margin-right:auto;
+  margin-left:auto;
+  margin-bottom:40px;
+  color:rgb(51, 51, 51);
+  font-weight:100;
+}
+.welcome{
+  text-align:center;
+  font-weight:100;
+  margin-top:0px;
+  margin-right:0px;
+  margin-bottom:0px;
+  margin-left:0px;
+  font-size:22px;
+}
+.logo path{
+  pointer-events:none;
+  fill:none;
+  stroke-linecap:round;
+  stroke-width:7;
+  stroke:rgb(255, 255, 255);
+}
+.big-title{
+  text-align:center;
+  font-size:2.66rem;
+  margin-top:26px;
+  margin-right:0px;
+  margin-bottom:26px;
+  margin-left:0px;
+  color:rgb(24, 144, 255);
+  font-weight:400;
+}
+.description{
+  text-align:center;
+  font-size:1rem;
+  line-height:1.8rem;
+  margin-bottom:1rem;
+}
+.wechat-group{
+  text-align:center;
+  padding-bottom:10px;
+}
+.wechat-group img{
+  max-width:220px;
+  height:auto;
+  border-top-left-radius:8px;
+  border-top-right-radius:8px;
+  border-bottom-right-radius:8px;
+  border-bottom-left-radius:8px;
+  margin-top:0px;
+  margin-right:auto;
+  margin-bottom:0px;
+  margin-left:auto;
+  width:100%;
+}
+.welcome-img{
+  padding-top:20px;
+  padding-right:0px;
+  padding-bottom:20px;
+  padding-left:0px;
+  text-align:center;
+}
+.welcome-img img{
+  width:100%;
+}
+#nav-1{
+  padding-top:30px;
+  padding-right:0px;
+  padding-bottom:30px;
+  padding-left:0px;
+  width:100%;
+  margin-top:0px;
+  margin-right:0px;
+  margin-bottom:0px;
+  margin-left:0px;
+  border-bottom-width:1px;
+  border-bottom-style:solid;
+  border-bottom-color:rgba(0, 0, 0, 0.1);
+  position:relative;
+}
+#nav-1 .header-inner{
+  width:100%;
+}
+#nav-1 .header-inner::after{
+  content:" ";
+  height:0px;
+  display:block;
+  visibility:hidden;
+  clear:both;
+}
+#nav-1 h1{
+  float:left;
+  padding-top:0px;
+  padding-right:0px;
+  padding-bottom:0px;
+  padding-left:0px;
+  font-weight:900;
+  font-size:28px;
+  margin-bottom:0px;
+  text-transform:uppercase;
+  font-family:Roboto, Arial, sans-serif;
+}
+#nav-1 > a{
+  display:inline-block;
+  width:138px;
+  height:22px;
+}
+#nav-1 img{
+  height:22px;
+  width:auto;
+}
+#nav-1 nav{
+  float:right;
+  padding-top:0px;
+  padding-right:0px;
+  padding-bottom:0px;
+  padding-left:0px;
+}
+#nav-1 nav ul{
+  padding-top:0px;
+  padding-right:0px;
+  padding-bottom:0px;
+  padding-left:0px;
+  margin-top:0px;
+  margin-right:0px;
+  margin-bottom:0px;
+  margin-left:0px;
+}
+#nav-1 nav ul li{
+  padding-top:0px;
+  padding-right:0px;
+  padding-bottom:0px;
+  padding-left:0px;
+  margin-top:0px;
+  margin-right:6px;
+  margin-bottom:0px;
+  margin-left:0px;
+  list-style-position:initial;
+  list-style-image:initial;
+  list-style-type:none;
+  display:inline-block;
+  zoom:1;
+}
+#nav-1 nav ul li a{
+  color:rgba(0, 0, 0, 0.5);
+  font-size:16px;
+  padding-top:6px;
+  padding-right:14px;
+  padding-bottom:6px;
+  padding-left:14px;
+  position:relative;
+  transition-duration:0.2s;
+  transition-timing-function:ease;
+  transition-delay:0s;
+  transition-property:all;
+}
+#nav-1 nav ul li a:hover{
+  text-decoration-line:none;
+  text-decoration-thickness:initial;
+  text-decoration-style:initial;
+  text-decoration-color:initial;
+}
+#nav-1 nav ul li a.active, #nav-1 nav ul li a:focus{
+  outline-color:initial;
+  outline-style:none;
+  outline-width:initial;
+  text-decoration-line:none;
+  text-decoration-thickness:initial;
+  text-decoration-style:initial;
+  text-decoration-color:initial;
+  color:white;
+  background-image:initial;
+  background-position-x:initial;
+  background-position-y:initial;
+  background-size:initial;
+  background-repeat-x:initial;
+  background-repeat-y:initial;
+  background-attachment:initial;
+  background-origin:initial;
+  background-clip:initial;
+  background-color:rgb(31, 181, 123);
+  border-top-left-radius:5px;
+  border-top-right-radius:5px;
+  border-bottom-right-radius:5px;
+  border-bottom-left-radius:5px;
+}
+.c3869{
+  padding:10px 10px 10px 10px;
+  font-size:4px;
+  font-weight:400;
+  text-align:center;
+  border:3px solid black;
+  margin:0 0 0px 0;
+}
+@media (max-width: 767.98px){
+  .big-title{
+    font-size:1.9rem;
+  }
+}
+.update {
+    flex-wrap: wrap-reverse;
+    display: flex !important;
+    border-radius: 20px 20px 20px 20px;
+    outline: rgba(0, 255, 234, 1) none 2px;
+    box-shadow: 2px 2px 2px 2px rgba(224, 221, 224, );
+    transition-property: all;
+    transition-duration: 1s;
+    transition-timing-function: linear;
+    width: 1032px !important;
+    justify-content: center;
+    margin: auto auto auto 0;
+    overflow-x: visible;
+    overflow-y: visible;
+    align-self: flex-start;
+    max-width: 3500px;
+    min-width: 10px;
+}
+.button {
+    max-width: 100px;
+    min-width: 10px;
+    justify-content: space-around;
+    display: flex !important;
+    align-items: flex-start;
+    width: 79px !important;
+    height: 47px !important;
+    border-radius: 20px 20px 20px 20px;
+    outline: rgba(83, 214, 214, 1) solid 3px;
+    background-color: rgba(102, 255, 181, 1);
+    box-shadow: 0 5px 5px 5px rgba(140, 140, 140, 0.25);
+    transition-property: all;
+    transition-duration: 0.3s;
+    transition-timing-function: linear;
+    margin: 0 0 0 30px;
+}
+.input {
+    border-radius: 20px 20px 20px 20px;
+    justify-content: center;
+    display: flex !important;
+    align-items: center;
+    width: 562px !important;
+    height: 152px !important;
+    border-top: rgba(54, 224, 201, 1) solid 2px !important;
+    border-left: rgba(54, 224, 201, 1) solid 2px !important;
+    border-bottom: rgba(54, 224, 201, 1) solid 2px !important;
+    border-right: rgba(54, 224, 201, 1) solid 2px !important;
+    padding: 15px 15px 15px 15px;
+    overflow-x: scroll;
+    overflow-y: scroll;
+    position: static;
+    min-width: 10px;
+    max-width: 3000px;
+}
+.input::-webkit-scrollbar {
+    display: none;
+}

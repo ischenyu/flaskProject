@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>历史记录</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/default.min.css">
+    <style>
+        body {
+            font-family: "Microsoft YaHei", DengXian, sans-serif;
+            margin: 20px;
+            background-color: #f3f3f3;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        .entry-container {
+            background-color: #baffdd;
+            border: 2px solid #66ffb5;
+            border-radius: 20px;
+            padding: 10px;
+            margin-bottom: 10px;
+            max-width: 100%;
+        }
+
+        .info {
+            color: black;
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 6px;
+        }
+
+        .entry {
+            background-color: #baffdd;
+            border: none;
+            resize: none;
+            width: auto;
+            height: auto;
+            min-height: 50px;
+            overflow: auto;
+            font-size: 16px;
+            padding: 6px;
+            margin-top: 6px;
+            outline: none;
+            white-space: pre-wrap;
+            display: inline-block;
+            word-wrap: break-word;
+            max-width: 100%;
+        }
+
+        .entry[readonly] {
+            background-color: #f3f3f3;
+            color: #999;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <h1>历史记录</h1>
+    {% for entry in history %}
+        <div class="entry-container">
+            <div class="info">{{ entry.number }}. {{ entry.datetime }}</div>
+            <pre><code class="entry">{{ entry.word }}</code></pre>
+        </div>
+    {% endfor %}
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.querySelectorAll("code").forEach(function(element) {
+                hljs.highlightElement(element);
+            });
+        });
+    </script>
+</body>
+</html>

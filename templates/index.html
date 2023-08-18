@@ -1,0 +1,75 @@
+<html>
+<head>
+  <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+  <header id="nav-1" role="banner">
+    <div class="container">
+      <div class="header-inner">
+        <h1>
+          <a href="https://htmlpage.cn/"><img src="https://template-1253409072.cos.ap-guangzhou.myqcloud.com/logos/logo-small-svg.svg" alt="HTMLPAGE" itemprop="logo" class="custom-logo"/></a>
+        </h1>
+        <nav role="navigation">
+          <ul>
+            <li>
+              <a href="https://htmlpage.cn/" class="active">首页</a>
+            </li>
+            <li>
+              <a href="http://editor.htmlpage.cn/">编辑器</a>
+            </li>
+            <li>
+              <a href="https://htmlpage.cn/download">下载</a>
+            </li>
+            <li>
+              <a href="https://htmlpage.cn/help">帮助</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <div id="default-editor-page__placeholder" class="panel">
+    <h1 class="welcome">公告栏</h1>
+    <div class="big-title">
+      <span>192.168.1.2</span>
+    </div>
+    <div class="description">这里显示的是最新的公告</div>
+    <div class="welcome-img"></div>
+    <div class="wechat-group"></div>
+    <div id="i3c6f" class="c4818">{{ iw66k_data|safe }}</div>
+  </div>
+  <div class="row"></div>
+  <div class="update">
+    <textarea id="textarea" class="input"></textarea>
+    <input type="submit" id="button" value="提交" class="button">
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+  // 监听按钮点击事件
+  $("#button").click(function() {
+    var inputText = $("#textarea").val();  // 获取输入框中的文字
+
+    // 使用 AJAX 发送数据给 Flask
+    $.ajax({
+      url: "/process",
+      type: "POST",
+      data: {
+        text: inputText
+      },
+      success: function(response) {
+        // 处理 Flask 返回的响应
+        alert("成功发送数据给 Flask！返回值为：" + response);
+      },
+      error: function(xhr, status, error) {
+        // 处理发送失败的情况
+        alert("发送数据给 Flask 失败：" + error);
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

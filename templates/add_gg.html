@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>发布公告</title>
+    <link rel="stylesheet" href="https://unpkg.com/vditor/dist/index.css"/>
+    <script src="https://unpkg.com/vditor/dist/index.min.js">
+    </script>
+    <style>
+        body {
+            font-family: "Microsoft YaHei", DengXian, sans-serif;
+            margin: 20px;
+            background-color: #f3f3f3;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        .editor-container {
+            background-color: #fff;
+            border: 2px solid #ccc;
+            border-radius: 6px;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        .editor {
+            width: 100%;
+            height: 400px;
+        }
+
+        .submit-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+            #editor {
+        display: flex;
+        min-height: 600px;
+        width: 100%;
+    }
+
+    #md-area {
+        width: 100%;
+        background: #f5f5f5;
+        border: 1px solid #111;
+
+    }
+    #view-area {
+        width: 100%;
+        border: 1px solid #111;
+    }
+
+    /*Github主题要求的样式引入*/
+    .markdown-body {
+        box-sizing: border-box;
+        min-width: 200px;
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+
+    </style>
+</head>
+<body>
+    <h1>发布公告</h1>
+        <input id = 'update' type="button" onclick="getContent()" value="上传" />
+        <div id="content">
+        </div>
+        <script>
+            var vditor = null;
+            window.onload = function() {
+                vditor = new Vditor(document.getElementById('content'), {
+                    cache: {
+                        enable: false
+                    },
+                    "mode": "sv",
+                    "preview": {
+                        "mode": "both"
+                    }
+                });
+            } // 测试数据填充
+            //function getContent() {
+            //    vditor.setValue('#公告');
+            //}
+        </script>
+
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+  // 监听按钮点击事件
+  $("#update").click(function() {
+    var inputText = vditor.getValue();  // 获取Vditor编辑器的内容
+
+    // 使用 AJAX 发送数据给 Flask
+    $.ajax({
+      url: "/returngg",
+      type: "POST",
+      data: {
+        text: encodeURIComponent(inputText)  // 对文本进行编码
+      },
+      success: function(response) {
+        // 处理 Flask 返回的响应
+        alert("成功发送数据给 Flask！返回值为：" + response);
+      },
+      error: function(xhr, status, error) {
+        // 处理发送失败的情况
+        alert("发送数据给 Flask 失败：" + error);
+      }
+    });
+  });
+</script>
+</body>
+</html>
