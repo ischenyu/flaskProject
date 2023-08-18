@@ -6,7 +6,6 @@ import urllib.parse
 app = Flask(__name__)
 history = []
 
-
 @app.route('/')
 def home():
     with open('data/data.txt', 'r', encoding='utf-8') as readfile:
