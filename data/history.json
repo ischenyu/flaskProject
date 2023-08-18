@@ -1,32 +1,7 @@
 [
     {
         "number": 1,
-        "datetime": "2023-08-16 17:36:09",
-        "word": "单晨霏\n"
-    },
-    {
-        "number": 2,
-        "datetime": "2023-08-16 17:47:23",
-        "word": "单晨霏\n"
-    },
-    {
-        "number": 3,
-        "datetime": "2023-08-16 17:56:10",
-        "word": "114514"
-    },
-    {
-        "number": 4,
-        "datetime": "2023-08-16 17:56:30",
-        "word": "<!DOCTYPE html>\n<html>\n<head>\n    <meta charset=\"UTF-8\">\n    <title>历史记录</title>\n    <style>\n        body {\n            font-family: Arial, sans-serif;\n            margin: 20px;\n            background-color: #f3f3f3;\n        }\n\n        h1 {\n            color: #333;\n            text-align: center;\n        }\n\n        ul {\n            list-style-type: none;\n            padding: 0;\n        }\n\n        li {\n            background-color: #fff;\n            border-bottom: 1px solid #ddd;\n            padding: 10px;\n            margin-bottom: 10px;\n        }\n    </style>\n</head>\n<body>\n    <h1>历史记录</h1>\n    <ul>\n        {% for entry in history %}\n            <li>\n                <strong>{{ entry.number }}.</strong>\n                <span>{{ entry.datetime }}:</span>\n                <span>{{ entry.word }}</span>\n            </li>\n        {% endfor %}\n    </ul>\n</body>\n</html>"
-    },
-    {
-        "number": 5,
-        "datetime": "2023-08-16 18:26:13",
-        "word": "114514\n\nu一万次u我"
-    },
-    {
-        "number": 6,
-        "datetime": "2023-08-17 14:50:39",
-        "word": "测试，\n\n\n\n\n\n\n\n\n\n成功了即开始使用"
+        "datetime": "2023-08-18 12:45:11",
+        "word": "1145"
     }
 ]
