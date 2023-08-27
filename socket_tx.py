@@ -8,7 +8,7 @@ target_port = 8080
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
 # 发送的消息
-message = 'light on'
+message = 'light off'
 
 try:
     # 发送消息给目标地址

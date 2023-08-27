@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 20px;
+        }
+        .circle {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin: 20px;
+    }
+
+    #red-light {
+        background-color: {{ red_light }};
+    }
+
+    #yellow-light {
+        background-color: {{ yellow_light }};
+    }
+
+    #green-light {
+        background-color: {{ green_light }};
+    }
+    .circle {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin: 20px;
+    }
+
+    /* 响应式设计 */
+    @media screen and (max-width: 600px) {
+        .circle {
+            width: 50px;
+            height: 50px;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div class="circle" id="red-light"></div>
+    <div class="circle" id="yellow-light"></div>
+    <div class="circle" id="green-light"></div>
+
+    <form action="/addhld" method="post">
+        <input type="hidden" name="current_color" value="{{ current_color }}">
+        <label for="seconds">秒数:</label>
+        <input type="number" id="seconds" name="seconds"><br><br>
+
+        <label for="color">灯的颜色:</label>
+        <select id="color" name="color">
+            <option value="red">红色</option>
+            <option value="yellow">黄色</option>
+            <option value="green">绿色</option>
+        </select><br><br>
+
+        <input type="submit" value="上传">
+    </form>
+</body>
+</html>

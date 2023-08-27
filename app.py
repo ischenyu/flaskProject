@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request
 import markdown2, json, datetime
-import urllib.parse
+import urllib.parse,threading
 
 
 app = Flask(__name__)
@@ -56,6 +56,39 @@ def jsgg():
         gg.write(decoded_text)
     import send_email
     return '收到数据：' + decoded_text
+
+@app.route('/hld', methods=['GET'])
+def hld():
+    red_light = "gray"
+    yellow_light = "gray"
+    green_light = "gray"
+    return render_template('hld.html', red_light=red_light, yellow_light=yellow_light, green_light=green_light)
+
+@app.route('/addhld', methods=['POST'])
+@app.route('/addhld', methods=['POST'])
+def add_hld():
+    import hld
+    try:
+        seconds = int(request.form["seconds"])
+        color = request.form["color"]
+        if color == "red":
+            red_light = "red"
+            yellow_light = "gray"
+            green_light = "gray"
+        elif color == "yellow":
+            red_light = "gray"
+            yellow_light = "yellow"
+            green_light = "gray"
+        else:  # color is "green"
+            red_light = "gray"
+            yellow_light = "gray"
+            green_light = "green"
+        hld.send(seconds, color)  # 将参数传递给send函数
+        return render_template('hld.html', red_light=red_light, yellow_light=yellow_light, green_light=green_light)
+    except ValueError:
+        pass
+
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0',port=2233)
