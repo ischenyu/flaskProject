@@ -45,4 +45,3 @@ def read_gonggao():  #暂时有问题
     result = cursor.fetchall()
     for row in result:
         print(row)
-    pass
