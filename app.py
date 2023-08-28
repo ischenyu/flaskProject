@@ -88,4 +88,5 @@ def add_hld():
         pass
 
 if __name__ == '__main__':
+    print('服务器，启动')
     app.run(host='0.0.0.0',port=2233)
