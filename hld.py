@@ -1,6 +1,6 @@
 import socket,time
 
-target_ip = '192.168.1.9'
+target_ip = '192.168.1.5'
 target_port = 8080
 jieshou_ip = '0.0.0.0'
 jieshou_port= 1145
