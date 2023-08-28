@@ -1,7 +1,6 @@
 from flask import Flask, render_template, request
 import markdown2, json, datetime
-import urllib.parse,threading
-
+import urllib.parse,threading  #导入必要模块
 
 app = Flask(__name__)
 history = []
@@ -40,13 +39,13 @@ def show_history():
 
 @app.route('/index.css')
 def css():
-    return render_template('index.css')
+    return render_template('index.css')  #浏览器获取css样式的路由
 
 @app.route('/add')
 def add_gg():
     with open('data/data.txt', 'r', encoding='utf-8') as readfile:
-        info = readfile.read()
-    return render_template('add_gg.html',ggfile = info)
+        info = readfile.read()   #读取文件内的公告
+    return render_template('add_gg.html',ggfile = info)  #修改网站公告页面
 
 @app.route('/returngg', methods=['POST','GET'])
 def jsgg():
@@ -55,14 +54,14 @@ def jsgg():
     with open('data/data.txt','w',encoding = 'utf-8') as gg :
         gg.write(decoded_text)
     import send_email
-    return '收到数据：' + decoded_text
+    return '收到数据：' + decoded_text   #后端接受公告，简单粗暴的写入文件，后续优化写入数据库
 
 @app.route('/hld', methods=['GET'])
 def hld():
     red_light = "gray"
     yellow_light = "gray"
     green_light = "gray"
-    return render_template('hld.html', red_light=red_light, yellow_light=yellow_light, green_light=green_light)
+    return render_template('hld.html', red_light=red_light, yellow_light=yellow_light, green_light=green_light)  #红绿灯控制页面，后端连接单片机
 
 @app.route('/addhld', methods=['POST'])
 @app.route('/addhld', methods=['POST'])
@@ -83,7 +82,7 @@ def add_hld():
             red_light = "gray"
             yellow_light = "gray"
             green_light = "green"
-        hld.send(seconds, color)  # 将参数传递给send函数
+        hld.send(seconds, color)  # 将前端返回的参数传递给hld.send函数，并调用hld.py向单片机发送数据{json}
         return render_template('hld.html', red_light=red_light, yellow_light=yellow_light, green_light=green_light)
     except ValueError:
         pass
