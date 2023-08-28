@@ -54,7 +54,7 @@ def jsgg():
     decoded_text = urllib.parse.unquote(text)
     with open('data/data.txt','w',encoding = 'utf-8') as gg :
         gg.write(decoded_text)
-    import send_email
+    import send_email #调用send_email.py，以邮件的形式向指定的客户端发送添加的公告，为了良好的观感，会将公告内的markdown格式文件转换为HTML发送到客户端，邮件管理器便能渲染这些发来的html
     ctrlmysql.add_sql(text)
     return '收到数据：' + decoded_text   #后端接受公告，简单粗暴的写入文件，后续优化写入数据库
 
@@ -65,7 +65,7 @@ def hld():
     green_light = "gray"
     return render_template('hld.html', red_light=red_light, yellow_light=yellow_light, green_light=green_light)  #红绿灯控制页面，后端连接单片机
 
-@app.route('/addhld', methods=['POST'])
+#@app.route('/addhld', methods=['POST'])
 @app.route('/addhld', methods=['POST'])
 def add_hld():
     import hld
@@ -92,3 +92,4 @@ def add_hld():
 if __name__ == '__main__':
     print('服务器，启动')
     app.run(host='0.0.0.0',port=2233)
+    #目前有些小bug，但是有句话说得好：bug能运行，就不要动它，它有可能依靠bug运行的{doge}
