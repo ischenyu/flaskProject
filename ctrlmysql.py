@@ -1,0 +1,31 @@
+import mysql.connector
+
+# 连接到MySQL数据库
+cnx = mysql.connector.connect(
+    host="192.168.1.9",
+    user="root",
+    password="1017",
+    database="python"
+)
+
+# 创建游标对象
+cursor = cnx.cursor()
+
+# 执行查询
+query = "SELECT * FROM goods"
+cursor.execute(query)
+
+# 获取查询结果
+result = cursor.fetchall()
+for row in result:
+    print(row)
+
+# 插入数据
+insert_query = "INSERT INTO test (col1, col2) VALUES (%s, %s)"
+data = ("value1", "value2")
+cursor.execute(insert_query, data)
+cnx.commit()
+
+# 关闭游标对象和数据库连接
+cursor.close()
+cnx.close()
