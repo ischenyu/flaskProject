@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request
 import markdown2, json, datetime
 import urllib.parse,threading  #导入必要模块
+import ctrlmysql
 
 app = Flask(__name__)
 history = []
@@ -54,6 +55,7 @@ def jsgg():
     with open('data/data.txt','w',encoding = 'utf-8') as gg :
         gg.write(decoded_text)
     import send_email
+    ctrlmysql.add_sql(text)
     return '收到数据：' + decoded_text   #后端接受公告，简单粗暴的写入文件，后续优化写入数据库
 
 @app.route('/hld', methods=['GET'])
